@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef, useState } from "react";
 
 function App() {
+  const [text, setText] = useState("");
+  const inputRef = useRef();
+  function focus() {
+    inputRef.current.focus();
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <input
+        ref={inputRef}
+        type="text"
+        onChange={(e) => setText(e.target.value)}
+        value={text}
+      />
+      <h4>My name is {text}</h4>
+      <button onClick={focus}>focus</button>
     </div>
   );
 }
