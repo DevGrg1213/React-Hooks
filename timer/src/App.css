@@ -1,0 +1,15 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.start-btn{
+  background-color: green;
+}
+.stop-btn{
+  background-color: red;
+}
+.reset-btn{
+  background-color: yellow;
+}
